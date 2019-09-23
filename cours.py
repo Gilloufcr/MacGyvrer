@@ -34,3 +34,24 @@
 #    print("pas bon")
 #else:
 #    print("okkkk")
+
+
+
+
+
+# Programme année Bissextile
+
+annee = input("Merci de saisir une année : ")
+result4 = int(annee) / 4
+result100 = int(annee) / 100
+result400 = int(annee) / 400
+if result4.is_integer() and result100.is_integer() and result400.is_integer():
+    print(result4)
+    print(result100)
+    print(result400)
+    print("L\' Annee est bien Bissextile")    
+else:
+    print(result4)
+    print(result100)
+    print(result400)
+    print("L\' Annee n\'est pas Bissextile")
