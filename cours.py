@@ -1,3 +1,6 @@
+# -*-coding:Utf-8 -*
+
+
 #Tests de conditions
 #mon_age = 5
 #if mon_age > 20:
@@ -23,3 +26,11 @@
 #   print("age ok")
 #else:
 #    print("not at all")
+
+#Test de is not
+
+#majeur = False
+#if majeur is not True:
+#    print("pas bon")
+#else:
+#    print("okkkk")
