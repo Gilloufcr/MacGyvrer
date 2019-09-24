@@ -59,11 +59,17 @@
 
 # Variante Programme année Bissextile
 
-annee = input("Merci de saisir une année : ")
 
-if int(annee) % 400 == 0 or (int(annee) % 4 == 0 and int(annee) % 100 != 0):
-    print(annee)
-    print("L\' Annee est bien Bissextile")
-else:
-    print(annee)
-    print("L\' Annee n\'est pas Bissextile")
+
+
+annee = input("Merci de saisir une année : ")
+try:
+    if int(annee) % 400 == 0 or (int(annee) % 4 == 0 and int(annee) % 100 != 0):
+        print(annee)
+        print("L\' Annee est bien Bissextile")
+    else:
+        print(annee)
+        print("L\' Annee n\'est pas Bissextile")
+except ValueError:
+    annee = input("Mauvaise saisie, merci de saisir un chiffre :")
+        
