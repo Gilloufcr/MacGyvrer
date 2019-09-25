@@ -57,14 +57,38 @@ modif2 = " ".join(modif)
 print(modif)
 print(modif2)'''
 
-def modif_flottant(mon_chiffre):
+'''def modif_flottant(mon_chiffre):
+
+    if type(mon_chiffre) is not float:
+        raise TypeError(" Le chiffre n'est pas un flottant")
 
     num = str(mon_chiffre)[:5]
     print(num)
 
     good_num = num.replace(".",",")
-
     print("Votre num est :", good_num)
 
 if __name__ == "__main__":
-    modif_flottant("5.1545154515")
+    modif_flottant(5.1545154515)'''
+
+'''def afficher(*parametres, sep=' ', fin='\n'):
+
+    parametres = list(parametres)
+    
+    for i, parametre in enumerate(parametres):
+        parametres[i] = str(parametre)
+    
+    chaine = sep.join(parametres)
+    chaine += fin
+
+    print(chaine, end='')
+if __name__ == "__main__":
+    afficher('33', '34', 'tata')
+'''
+qtt_fruit_retirer = 7
+
+fruit_stocke = [15, 3, 2, 21, 18]
+
+mes_fruits = [nb_fruit-qtt_fruit_retirer for nb_fruit in fruit_stocke if nb_fruit>qtt_fruit_retirer]
+
+print(mes_fruits)
