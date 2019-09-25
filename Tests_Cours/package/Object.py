@@ -19,3 +19,31 @@ i = 0
 while i < len(machaine):
     print(machaine[i])
     i += 1'''
+
+'''ma_liste = [1, 2, "WTF", 450]
+
+print(ma_liste[1])
+print(ma_liste[2])
+
+ma_liste[2] = "WAZA"
+
+print(ma_liste[2])
+
+ma_liste.append("who'sssss BADDD")
+
+print(ma_liste)
+
+for elt in ma_liste:
+    print(elt)'''
+
+
+def decomposer(entier, divise_par):
+
+    p_e = entier // divise_par
+    reste = entier % divise_par
+
+    print(p_e, reste)
+    return p_e, reste
+
+if __name__ == "__main__":
+    decomposer(20,3)
