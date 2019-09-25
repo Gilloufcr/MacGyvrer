@@ -37,7 +37,7 @@ for elt in ma_liste:
     print(elt)'''
 
 
-def decomposer(entier, divise_par):
+'''def decomposer(entier, divise_par):
 
     p_e = entier // divise_par
     reste = entier % divise_par
@@ -47,3 +47,24 @@ def decomposer(entier, divise_par):
 
 if __name__ == "__main__":
     decomposer(20,3)
+'''
+'''ma_chaine = "Hello world !!!"
+
+modif = ma_chaine.split(" ")
+
+modif2 = " ".join(modif)
+
+print(modif)
+print(modif2)'''
+
+def modif_flottant(mon_chiffre):
+
+    num = str(mon_chiffre)[:5]
+    print(num)
+
+    good_num = num.replace(".",",")
+
+    print("Votre num est :", good_num)
+
+if __name__ == "__main__":
+    modif_flottant("5.1545154515")
