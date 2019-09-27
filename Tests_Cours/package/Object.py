@@ -100,5 +100,34 @@ inventaire_inverse = [(nbrfruit, fruit) for fruit, nbrfruit in inventaire]
 inventaire = [(fruit, nbrfruit) for nbrfruit, fruit in sorted(inventaire_inverse, reverse=True)]
 #inventaire.sort(key=lambda tup: (-tup[1], tup[0]))
 
-print(inventaire)'''
+print(inventaire)
+'''
+'''
+#mon_dico = dict()
+
+def fete():
+    print("C'est la fete")
+
+def oiseau():
+    print("Fais comme l'oiseau")
+
+mon_dico = {}
+
+mon_dico["piaf"] = oiseau
+mon_dico["cotillon"] = fete
+
+#mon_dico['a', '1'] = "Tour Blanche"
+#mon_dico['b', '1'] = "Cavalier Blanc"
+
+if __name__ == "__main__":
+    mon_dico["piaf"]()
+    mon_dico["cotillon"]()
+'''
+
+'''fruit = {"pomme":20, "raisin":30,"ananas":5, "poire":12}
+
+tri_fruit = [(qtt, nomfruit) for nomfruit, qtt in fruit.items()]
+inventaire = [(qtt, nomfruit) for qtt, nomfruit in sorted(tri_fruit)] 
+print(inventaire)
+'''
 
