@@ -131,3 +131,5 @@ inventaire = [(qtt, nomfruit) for qtt, nomfruit in sorted(tri_fruit)]
 print(inventaire)
 '''
 
+def ma_fonction(**parametres):
+    print()
