@@ -1,4 +1,4 @@
-
+# -*-coding:Utf-8 -*
 '''machaine = str()
 
 while machaine.lower() != "q":
