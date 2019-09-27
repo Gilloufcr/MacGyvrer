@@ -85,10 +85,20 @@ if __name__ == "__main__":
 if __name__ == "__main__":
     afficher('33', '34', 'tata')
 '''
-qtt_fruit_retirer = 7
+'''qtt_fruit_retirer = 7
 
 fruit_stocke = [15, 3, 2, 21, 18]
 
 mes_fruits = [nb_fruit-qtt_fruit_retirer for nb_fruit in fruit_stocke if nb_fruit>qtt_fruit_retirer]
 
-print(mes_fruits)
+print(mes_fruits)'''
+
+'''inventaire = [("pommes", 22), ("melons", 4), ("poires", 18), ("fraises", 76), ("prunes", 51)]
+
+inventaire_inverse = [(nbrfruit, fruit) for fruit, nbrfruit in inventaire]
+
+inventaire = [(fruit, nbrfruit) for nbrfruit, fruit in sorted(inventaire_inverse, reverse=True)]
+#inventaire.sort(key=lambda tup: (-tup[1], tup[0]))
+
+print(inventaire)'''
+

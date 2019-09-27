@@ -3,6 +3,9 @@
 
 motdico = "bonjour"
 
+lst_lettresUsed = []
+lst_lettresIns = []
+
 #motlist = [motdico]
 #print(motlist)
 
