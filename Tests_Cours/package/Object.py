@@ -124,12 +124,9 @@ if __name__ == "__main__":
     mon_dico["cotillon"]()
 '''
 
-'''fruit = {"pomme":20, "raisin":30,"ananas":5, "poire":12}
+'''
+fruit = {"pomme":20, "raisin":30,"ananas":5, "poire":12}
 
 tri_fruit = [(qtt, nomfruit) for nomfruit, qtt in fruit.items()]
 inventaire = [(qtt, nomfruit) for qtt, nomfruit in sorted(tri_fruit)] 
-print(inventaire)
-'''
-
-def ma_fonction(**parametres):
-    print()
+print(inventaire)'''
