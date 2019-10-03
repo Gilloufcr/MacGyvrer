@@ -41,4 +41,4 @@ def ajouter_liste(ma_liste, values):
 
 if __name__ == "__main__":
     liste = ['a', 'b', 'c']
-    ajouter_liste(liste, 'e')
+    ajouter_liste(liste, '10')
