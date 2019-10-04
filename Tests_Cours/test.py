@@ -1,7 +1,16 @@
 # -*-coding:Utf-8 -*
-'''Test du fichier Fonction.py'''
+import pickle
 
-import os
-from Fonctions import *
+with open('score', 'ab+') as Fscore:
+    try:
+        FscoreUnpickler = pickle.Unpickler(Fscore)
+        Fcontenu = FscoreUnpickler.load()
+    except:
+        Fcontenu = {"Le Joueur2": "Son Score"}
+        FscorePickler = pickle.Pickler(Fscore)
+        FscorePickler.dump(Fcontenu)
 
-table_multi(5, 20)
+with open('score', 'rb') as Fscore:
+    FscoreUnpickler = pickle.Unpickler(Fscore)
+    Fcontenu = FscoreUnpickler.load()
+    print(Fcontenu)

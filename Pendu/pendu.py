@@ -1,17 +1,10 @@
 # -*-coding:Utf-8 -*
 
-
-motdico = "bonjour"
-
-lst_lettresUsed = []
-lst_lettresIns = []
-
-#motlist = [motdico]
-#print(motlist)
+from donnees import (MotDico, NbrChance, LstLettresIns, LstLettresUsed, NomJoueur, Score)
+from fonctions import Wscore
 
 
-for elt in enumerate(motdico):
-   print(elt)
+NomJoueur = input("Merci de Saisir votre Nom :")
+print("Votre Nom est :", NomJoueur)
 
-#while continuer_partie is True
-
+Wscore(NomJoueur,Score)

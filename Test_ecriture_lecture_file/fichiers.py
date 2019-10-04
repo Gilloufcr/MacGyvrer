@@ -34,7 +34,7 @@ if __name__ == "__main__":
 '''
 
 
-def ajouter_liste(ma_liste, values):
+'''def ajouter_liste(ma_liste, values):
     ma_liste.append(values)
     
     print(liste)
@@ -42,3 +42,5 @@ def ajouter_liste(ma_liste, values):
 if __name__ == "__main__":
     liste = ['a', 'b', 'c']
     ajouter_liste(liste, '10')
+'''
+
