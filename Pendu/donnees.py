@@ -1,9 +1,9 @@
 # -*-coding:Utf-8 -*
 
 
-MotDico = ["bonjour", "salut", "toto", "tutu", "table","chaise"]
+MotDico = {'bonjour':1, 'salut':2, 'toto':3, 'tutu':4, 'table':5, 'chaise':6}
 NbrChance = 8
 LstLettresUsed = []
 LstLettresIns = []
 NomJoueur = ""
-Score = "0"
+Score = "10"
