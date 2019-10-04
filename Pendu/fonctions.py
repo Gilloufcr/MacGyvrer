@@ -2,7 +2,7 @@
 
 import os
 import pickle
-from random import choice
+
 
 #Fonction d'ecriture du fichier Score.
 def Wscore(PNomJoueur,Pscore):
@@ -13,7 +13,7 @@ def Wscore(PNomJoueur,Pscore):
             FscoreUnpickler = pickle.Unpickler(Fscore)
             Fcontenu = FscoreUnpickler.load()
         except:
-            Fcontenu = {"Le Joueur": "Son Score"}
+            Fcontenu = {PNomJoueur: 0}
             FscorePickler = pickle.Pickler(Fscore)
             FscorePickler.dump(Fcontenu)
 
@@ -39,7 +39,7 @@ def Wscore(PNomJoueur,Pscore):
 
 
 #Fonction du choix du mot
-def ChoixMot(Pdico):
-    RandomWord = choice(list(Pdico.keys()))
-    print(RandomWord)
+#def ChoixMot(Pdico):
+#    RandomWord = choice(list(Pdico.keys()))
+#    print(RandomWord)
            

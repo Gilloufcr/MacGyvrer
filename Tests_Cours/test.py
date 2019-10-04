@@ -1,5 +1,5 @@
 # -*-coding:Utf-8 -*
-import pickle
+'''import pickle
 
 with open('score', 'ab+') as Fscore:
     try:
@@ -13,4 +13,38 @@ with open('score', 'ab+') as Fscore:
 with open('score', 'rb') as Fscore:
     FscoreUnpickler = pickle.Unpickler(Fscore)
     Fcontenu = FscoreUnpickler.load()
-    print(Fcontenu)
+    print(Fcontenu)'''
+
+RandomWordUpp = "SALUT"
+LettreSaisieUpp =''
+MotTmp = ''
+
+while MotTmp != RandomWordUpp:
+    LettreSaisieUpp += input("Merci de saisir une lettre :")
+    MotTmp = ''
+    for LettreATrouver in RandomWordUpp:
+        if LettreATrouver in LettreSaisieUpp:
+            MotTmp += LettreATrouver
+        else:
+            MotTmp += "*"
+    print(MotTmp)
+
+
+
+
+
+'''Mot_tiré = "abcdef"
+Mot_caché = ""
+m = ""
+ 
+while (Mot_caché != Mot_tiré):
+    m += input("lettre:")
+ 
+    Mot_caché = ""
+    for char in Mot_tiré:
+        if (char in m):
+            Mot_caché += char
+        else:
+            Mot_caché += '-'
+ 
+    print(Mot_caché)'''
