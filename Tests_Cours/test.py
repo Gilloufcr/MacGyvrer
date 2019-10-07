@@ -15,11 +15,15 @@ with open('score', 'rb') as Fscore:
     Fcontenu = FscoreUnpickler.load()
     print(Fcontenu)'''
 
-RandomWordUpp = "SALUT"
+RandomWord = "SALUT"
 LettreSaisieUpp =''
 MotTmp = ''
 
-while MotTmp != RandomWordUpp:
+
+for IdLtr,LettreMot in enumerate(RandomWord):
+    print(IdLtr, LettreMot)
+
+'''while MotTmp != RandomWordUpp:
     LettreSaisieUpp += input("Merci de saisir une lettre :")
     MotTmp = ''
     for LettreATrouver in RandomWordUpp:
@@ -27,7 +31,7 @@ while MotTmp != RandomWordUpp:
             MotTmp += LettreATrouver
         else:
             MotTmp += "*"
-    print(MotTmp)
+        print(MotTmp)'''
 
 
 

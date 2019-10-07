@@ -9,24 +9,19 @@ print("Votre Nom est :", NomJoueur)
 
 #Choix du mot parmi le dictionnaire
 RandomWord = choice(list(MotDico.keys()))
-RandomWordUpp = RandomWord.upper()
 
-LettreSaisieUpp = ''.upper()
+LettreSaisie = ''
 #Initialisation de la Partie
 ContinuerJeux = True
 
 #Partie
 while ContinuerJeux == True:
-   if NbrChance > 0:
-      while MotTmp != RandomWordUpp:
-         LettreSaisieUpp += input("Merci de saisir une lettre :")
-         MotTmp = ''
-         for LettreATrouver in RandomWordUpp:
-            if LettreATrouver in LettreSaisieUpp:
-               MotTmp += LettreATrouver
-            else:
-               MotTmp += "*"
-         print(MotTmp)
-   else:
-      print("Vous n'avez plus d'essais!")
-      ContinuerJeux = False
+   while MotTmp != RandomWord:
+      LettreSaisie = input("Merci de saisir une lettre :")
+      for IdLtr,LettreMot in enumerate(RandomWord):
+         if LettreMot in LettreSaisie:
+            MotTmp = LettreMot
+            print(MotTmp)
+         else:
+            print("*")   
+            
