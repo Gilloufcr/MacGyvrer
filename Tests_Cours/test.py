@@ -16,12 +16,21 @@ with open('score', 'rb') as Fscore:
     print(Fcontenu)'''
 
 RandomWord = "SALUT"
-LettreSaisieUpp =''
+LettreSaisie =''
 MotTmp = ''
 
 
 for IdLtr,LettreMot in enumerate(RandomWord):
     print(IdLtr, LettreMot)
+
+for IdLtr,LettreMot in enumerate(RandomWord):
+    if LettreMot in LettreSaisie:
+        MotTmp = IdLtr,LettreMot
+        print(MotTmp, end='\n')
+    else:
+        print("*")   
+
+
 
 '''while MotTmp != RandomWordUpp:
     LettreSaisieUpp += input("Merci de saisir une lettre :")

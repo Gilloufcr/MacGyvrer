@@ -38,8 +38,8 @@ def Wscore(PNomJoueur,Pscore):
         print(Fcontenu)
 
 
-#Fonction du choix du mot
-#def ChoixMot(Pdico):
-#    RandomWord = choice(list(Pdico.keys()))
-#    print(RandomWord)
-           
+#Fonction Masque du mot
+def MasqueMot(PrandomWord, IdLtr=0, Ltr=''):
+    for IdLtr,Ltr in enumerate(PrandomWord):
+        MotMasque = "*"
+        print(MotMasque, end='')
