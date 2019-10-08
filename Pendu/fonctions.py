@@ -22,7 +22,7 @@ def Wscore(PNomJoueur,Pscore):
         FscoreUnpickler = pickle.Unpickler(Fscore)
         Fcontenu = FscoreUnpickler.load()
     
-    print("Le Score du Joueur :", PNomJoueur, "est :", Pscore)
+    print("Le Score du Joueur ", PNomJoueur, "est de ", Pscore)
 
     #Ecriture du Score
     with open('score', 'wb') as Fscore:
@@ -39,7 +39,15 @@ def Wscore(PNomJoueur,Pscore):
 
 
 #Fonction Masque du mot
-def MasqueMot(PrandomWord, IdLtr=0, Ltr=''):
-    for IdLtr,Ltr in enumerate(PrandomWord):
-        MotMasque = "*"
-        print(MotMasque, end='')
+def MasqueMot(PrandomWord):
+    MotMasque = bytearray(b'*' * len(PrandomWord))
+    return MotMasque
+
+#Fonction verification saisie
+def VerifLettreSaisie(PLettreSaisie):
+    LettreLower = PLettreSaisie.lower()
+    if len(LettreLower) > 1:
+        print("Merci de Saisir une seule Lettre")
+        return PLettreSaisie
+    else:
+        return LettreLower
