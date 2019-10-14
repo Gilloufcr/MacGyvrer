@@ -39,6 +39,7 @@ class TableauNoir:
         if self.surface != "":
             self.surface += "\n"
         self.surface += message
+        
 if __name__ == "__main__":
      tab = TableauNoir()
      tab.ecrire("Bonjour Allll!!")
