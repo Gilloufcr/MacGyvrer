@@ -1,5 +1,6 @@
 # -*-coding:Utf-8 -*
 
+
 '''
 class Personne:
     
@@ -33,7 +34,7 @@ class TableauNoir:
 
     def __init__(self):
         TableauNoir.surface = ""
-    
+        
     def ecrire(self, message):
 
         if self.surface != "":
@@ -41,6 +42,7 @@ class TableauNoir:
         self.surface += message
         
 if __name__ == "__main__":
+    
      tab = TableauNoir()
      tab.ecrire("Bonjour Allll!!")
      tab.ecrire("Deuxieme ligne")
