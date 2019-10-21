@@ -2,7 +2,7 @@
 
 
 
-class Personne:
+'''class Personne:
     
 
     def __init__(self, nom, prenom):
@@ -16,6 +16,7 @@ class Personne:
         """On accede en lecture a la ville"""
         print("ville actuelle")
         return self._ville
+    
     def _set_ville(self, new_ville):
         """On Accede en modification de la ville"""
         self._ville = new_ville
@@ -28,7 +29,7 @@ if __name__ == "__main__":
     print(Jean.ville)
     Jean.ville = "Berlin"
     print(Jean.ville)
-    
+   ''' 
 '''class Compteur:
     """Cette classe possède un attribut de classe qui s'incrémente à chaque
     fois que l'on crée un objet de ce type"""
@@ -90,3 +91,29 @@ if __name__ == "__main__":
     help(TableauNoir)'''
 
 
+class voiture:
+    """une classe représentant des voitures"""
+    
+    def __init__(self):
+        self.couleur = "Bleu"
+        self.genre = "Suv"
+        self._puissance = "150"
+    
+    def _get_puissance(self):
+        """Lecture de la Valeur de la puissance"""
+        print("Voici la Puissance : ")
+        return self._puissance
+    
+        
+    def _set_puissance(self, n_puissance):
+        """Modification de la Valeur de la Puissance"""
+        print("Nous modificons la puissance")
+        self._puissance = n_puissance
+        
+    puissance = property(_get_puissance,_set_puissance)
+        
+if __name__ == "__main__":
+    Merdus = voiture()
+    print(Merdus.puissance)
+    Merdus.puissance = "200"
+    print(Merdus.puissance)
