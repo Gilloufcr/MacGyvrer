@@ -61,7 +61,7 @@ if __name__ =="__main__":
     dico.__getitem__
 '''
 
-class Duree:
+'''class Duree:
     """Classe contenant des durées sous la forme d'un nombre de minutes
     et de secondes"""
 
@@ -88,3 +88,78 @@ if __name__ == "__main__":
     print(d1)
     d1 += 128
     print(d1)
+'''
+
+
+'''class Etudiant:
+
+    """Classe représentant un étudiant.
+
+    On représente un étudiant par son prénom (attribut prenom), son âge
+    (attribut age) et sa note moyenne (attribut moyenne, entre 0 et 20).
+
+    Paramètres du constructeur :
+        prenom -- le prénom de l'étudiant
+        age -- l'âge de l'étudiant
+        moyenne -- la moyenne de l'étudiant
+
+    """
+
+    def __init__(self, prenom, age, moyenne):
+        self.prenom = prenom
+        self.age = age
+        self.moyenne = moyenne
+
+    def __repr__(self):
+        return "<Étudiant {} (âge={}, moyenne={})>".format(
+            self.prenom, self.age, self.moyenne)
+    
+        
+        
+if __name__ == "__main__":
+    
+    etudiants = [
+        Etudiant("Clément", 14, 16),
+        Etudiant("Charles", 12, 15),
+        Etudiant("Oriane", 14, 16),
+        Etudiant("Thomas", 11, 12),
+        Etudiant("Damien", 12, 15),
+    ]
+
+print(sorted(etudiants, key=lambda etudiants:etudiants.moyenne, reverse=True))
+'''
+
+'''class Personne:
+    
+    def __init__(self, nom, prenom):
+        self.nom = nom
+        self.prenom = prenom
+        self.age = 56
+    def __str__(self):
+        return "{0} {1}".format(self.nom, self.prenom)
+    
+class AgentSpecial(Personne):
+    def __init__(self, nom, matricule, prenom):
+        Personne.__init__(self, nom, prenom)
+        self.matricule = matricule
+    def __str__(self):
+        return "Agent {0}, prenom {1} matricule {2}, age {3}".format(self.nom, self.prenom, self.matricule, self.age)
+    
+if __name__ == "__main__":
+    agent = AgentSpecial("Bond", 1235879, "James")
+    print(agent)
+'''
+
+'''class Revstr(str):
+    
+    def __init__(self, chaine):
+        self.chaine = chaine
+        
+    def __iter__(self):
+        ItRevstr = iter(chaine, reverse=True)
+        
+        
+if __name__ == "__main__":
+    Revstr("Hello")
+    print(Revstr)
+'''
