@@ -15,7 +15,7 @@ with open('score', 'rb') as Fscore:
     Fcontenu = FscoreUnpickler.load()
     print(Fcontenu)'''
 
-RandomWord = "SALUT"
+'''RandomWord = "SALUT"
 LettreSaisie =''
 MotTmp = ''
 
@@ -30,7 +30,7 @@ for IdLtr,LettreMot in enumerate(RandomWord):
     else:
         print("*")   
 
-
+'''
 
 '''while MotTmp != RandomWordUpp:
     LettreSaisieUpp += input("Merci de saisir une lettre :")
@@ -61,3 +61,17 @@ while (Mot_caché != Mot_tiré):
             Mot_caché += '-'
  
     print(Mot_caché)'''
+    
+    
+class DicoWithParam:
+    """Classe contenant les attribus en cas d'affectation via DicoOrdo"""
+    
+    def __init__(self, itemsadd):
+        self.itemsadd = itemsadd
+        self.keys = self.itemsadd.split('=')[0].strip()
+        self.values = self.itemsadd.split('=')[-1].strip()
+        print(self.keys,self.values)
+
+
+if __name__ == "__main__":
+    test = DicoWithParam("tomate = 10")
