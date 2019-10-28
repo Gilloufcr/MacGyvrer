@@ -2,14 +2,12 @@
 """Fichier Principal du jeux de labyrinthe"""
 
 import os
-from pathlib import Path
-from Roboc.classes import Moove
+from CMoove import Moove
+from CLevel import Level
 
 continuer_partie = True
-choix_carte = ""
 choix_menu = ""
-X = Moove()
-mon_rep_cartes = Path(__file__).parent / "cartes"
+#X = Moove()
 
 
 while continuer_partie == True:
@@ -22,9 +20,7 @@ while continuer_partie == True:
     
         choix_carte = input("Merci de Choisir une cartes parmis la liste suivante 1,2,3 : ")
 
-        with open(str(mon_rep_cartes) + "/" + choix_carte + ".txt", 'r') as contenu:
-            level = contenu.read()
-        print(level)
+        Level.create_level(choix_carte)
         continuer_partie = False
         
     if choix_menu == '2':
