@@ -2,8 +2,8 @@
 """Fichier Principal du jeux de labyrinthe"""
 
 import os
-from CMoove import Moove
-from CLevel import Level
+from .cmoove import Moove
+from .clevel import Level
 
 continuer_partie = True
 choix_menu = ""
