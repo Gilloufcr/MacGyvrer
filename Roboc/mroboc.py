@@ -2,12 +2,10 @@
 """Fichier Principal du jeux de labyrinthe"""
 
 import os
-from .cmoove import Moove
-from .clevel import Level
+from clevel import Level
 
 continuer_partie = True
 choix_menu = ""
-#X = Moove()
 
 
 while continuer_partie == True:
@@ -20,7 +18,11 @@ while continuer_partie == True:
     
         choix_carte = input("Merci de Choisir une cartes parmis la liste suivante 1,2,3 : ")
 
-        Level.create_level(choix_carte)
+        play_level = Level(choix_carte)
+        play_level.display_level()
+        play_level.find_mac()
+        play_level.find_exit()
+        print(play_level.find_exit())
         continuer_partie = False
         
     if choix_menu == '2':
