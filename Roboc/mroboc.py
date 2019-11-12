@@ -1,5 +1,5 @@
 # -*-coding:Utf-8 -*
-"""Fichier Principal du jeux de labyrinthe"""
+"""Fichier Principal du jeux de labyrinthe a terminer..."""
 
 import os
 from clevel import Level
