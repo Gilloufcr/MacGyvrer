@@ -7,3 +7,10 @@ class Caracter():
     def __init__(self, moove):
         self.moove = moove
         self.position_0 = Level.find_mac()
+
+
+
+
+    def move(self, key):
+        
+
