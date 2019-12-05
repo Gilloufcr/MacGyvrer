@@ -10,16 +10,22 @@ class Level():
     def __init__(self, maps):
         self.maps = maps
         self.list_level = self.create_level(maps)
-        self.position = self.find_mac()
-        self.exit = self.find_exit()
-        
         
     def create_level(self, maps):
         with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
             level = contenu.read()
             list_level = []
-            for line in level.splitlines():
-                list_level.append(list(line))
+            for i, line in enumerate(level.splitlines()):
+                list_line = []
+                for j, element in enumerate(line):
+                    if element == "X":
+                        self.position = [i, j]
+                        list_line.append(" ")
+                    else:
+                        list_line.append(element)
+
+                list_level.append(list_line)
+            
         return list_level
     
     def display_level(self):
@@ -29,20 +35,5 @@ class Level():
                 line_to_display += elements
             print(line_to_display)
             
-    def find_mac(self):
-        for i, line in enumerate(self.list_level):
-            try:
-                position = [i, line.index("X")]
-            except:
-                pass
-        return position
-    
-    def find_exit(self):
-        for i, line in enumerate(self.list_level):
-            try:
-                position = [i, line.index("U")]
-            except:
-                pass
-        return position
                                 
         

@@ -2,7 +2,9 @@
 """Fichier Principal du jeux de labyrinthe a terminer..."""
 
 import os
+from getkey import getkey, keys
 from clevel import Level
+from ccaracter import Caracter
 
 continuer_partie = True
 choix_menu = ""
@@ -20,9 +22,9 @@ while continuer_partie == True:
 
         play_level = Level(choix_carte)
         play_level.display_level()
-        play_level.find_mac()
-        play_level.find_exit()
-        print(play_level.find_exit())
+        macgiver = Caracter(play_level)
+        macgiver.move(getkey())
+        
         continuer_partie = False
         
     if choix_menu == '2':
