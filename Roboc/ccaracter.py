@@ -3,7 +3,6 @@
 from clevel import Level
 from getkey import getkey, keys
 
-
 class Caracter():
 
     def __init__(self, level_game):
