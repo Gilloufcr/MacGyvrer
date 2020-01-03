@@ -3,7 +3,7 @@
 from pathlib import Path
 
 mon_rep_cartes = Path(__file__).parent / "cartes"
-
+cartes_temp = Path(__file__).parent / "temp"
 
 class Level():
     
@@ -13,9 +13,9 @@ class Level():
         self.wall = []
         self.pipe = (-1, -1)
         self.list_level = self.create_level(maps)
-        
+
     def create_level(self, maps):
-        with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
+        with open(str(cartes_temp) + "/" + maps + ".txt", 'r') as contenu:
             level = contenu.read()
             list_level = []
             for i, line in enumerate(level.splitlines()):
@@ -35,7 +35,7 @@ class Level():
 
 
     def write_level(self, maps):
-        with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
+        with open(str(cartes_temp) + "/" + maps + ".txt", 'r') as contenu:
             level = contenu.read()
             list_level = []
             for i, line in enumerate(level.splitlines()):
@@ -59,3 +59,14 @@ class Level():
             print(line_to_display)
                         
         
+class Copy():
+
+    def __init__(self, maps):
+        self.maps = maps
+    
+    def copy_level(self, maps):
+        with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
+            write_maps = contenu.read()
+            maps_temps = open(str(cartes_temp) + "/" + maps + ".txt", "w")
+            maps_temps.write(write_maps)
+            maps_temps.close()

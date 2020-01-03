@@ -3,7 +3,7 @@
 
 import os
 from getkey import getkey, keys
-from clevel import Level
+from clevel import Level, Copy
 from ccaracter import Caracter
 
 continuer_partie = True
@@ -19,6 +19,11 @@ while continuer_partie == True:
     if choix_menu == '1':
     
         choix_carte = input("Merci de Choisir une cartes parmis la liste suivante 1,2,3 : ")
+        
+        """On copie le fichier de carte pour effectuer la partie"""
+        
+        copy_maps = Copy(choix_carte)
+        copy_maps.copy_level(choix_carte)
 
         play_level = Level(choix_carte)
         play_level.display_level()
