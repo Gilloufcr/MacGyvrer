@@ -26,20 +26,20 @@ while continuer_partie == True:
                 level = contenu.read()
                 macgyvrer = ()
                 wall = []
-                seringe = ()
+                pipe = ()
                 for i, j in enumerate(level.splitlines()):
                     for k, l in enumerate(j):
                         if l == "X":
                             macgyvrer = (i, k)
                         if l == "O":
                             wall.append((i,k))
-                        if l == "S":
-                            seringe = ()
+                        if l == "T":
+                            pipe = (i,k)
 
                     
             print(macgyvrer)
             print(wall)
-            print(seringe)
+            print(pipe)
             return macgyvrer, wall
 
         def display_level(List_level):

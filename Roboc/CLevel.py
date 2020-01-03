@@ -9,9 +9,32 @@ class Level():
     
     def __init__(self, maps):
         self.maps = maps
+        self.positionmc = (-1, -1)
+        self.wall = []
+        self.pipe = (-1, -1)
         self.list_level = self.create_level(maps)
         
     def create_level(self, maps):
+        with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
+            level = contenu.read()
+            list_level = []
+            for i, line in enumerate(level.splitlines()):
+                list_line = []
+                for j, elements in enumerate(line):
+                    if elements == "X":
+                            self.positionmc = (i, j)
+                    if elements == "O":
+                            self.wall.append((i,j))
+                    if elements == "T":
+                            self.pipe = (i,j)
+                    list_line.append(elements)
+
+                list_level.append(list_line)
+            
+        return list_level
+
+
+    def write_level(self, maps):
         with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
             level = contenu.read()
             list_level = []
@@ -34,6 +57,5 @@ class Level():
             for elements in line:
                 line_to_display += elements
             print(line_to_display)
-            
-                                
+                        
         

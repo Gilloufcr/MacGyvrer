@@ -1,9 +1,9 @@
 OOOOOOOOOO
-O        O
+OX       O
 O        O
 O   T    O
 O        O
-O    X   U
+O        U
 O        O
 O   A    O
 O        O
