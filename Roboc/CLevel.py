@@ -13,6 +13,8 @@ class Level():
         self.positionmc = (-1, -1)
         self.wall = []
         self.pipe = (-1, -1)
+        self.needle = (-1, -1)
+        self.ether = (-1, -1)
         self.list_level = self.create_level(maps)
        
     def create_level(self, maps):
@@ -26,8 +28,12 @@ class Level():
                             self.positionmc = (i, j)
                     if elements == "O":
                             self.wall.append((i,j))
-                    if elements == "T":
+                    if elements == "P":
                             self.pipe = (i,j)
+                    if elements == "N":
+                            self.needle = (i,j)
+                    if elements == "E":
+                            self.ether = (i,j)
                     list_line.append(elements)
 
                 list_level.append(list_line)
@@ -67,23 +73,24 @@ class Write():
             list_level = []
             for i, line in enumerate(level.splitlines()):
                 list_line = []
-                for j, element in enumerate(line):
-                    if element == "X":
+                for j, elements in enumerate(line):
+                    if elements == "X":
                         self.position = [i, j]
                         list_line.append(" ")  
                     else:
-                        list_line.append(element)
+                        list_line.append(elements)
 
                 list_level.append(list_line)
-            
-            p_1 = positionmac[0]
-            p_2 = positionmac[1]
-            self.positionmac_ok = [p_1, p_2]
-            print(self.positionmac_ok)
-            
 
         for line in list_level:
             line_to_write = ""
             for elements in line:
                 line_to_write += elements
             print(line_to_write)
+        
+        list_writelevel = [list(i) for i in level.splitlines()]
+        print(list_writelevel[0])
+        print(list_writelevel)
+        
+
+            
