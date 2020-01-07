@@ -61,6 +61,52 @@ while continuer_partie == True:
 
 
 
+def create_level(self, maps):
+        with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
+            level = contenu.read()
+            list_level = []
+            for i, line in enumerate(level.splitlines()):
+                list_line = []
+                for j, element in enumerate(line):
+                    if element == "X":
+                        self.position = [i, j]
+                        list_line.append(" ")
+                    else:
+                        list_line.append(element)
+
+                list_level.append(list_line)
+            
+        return list_level
 
 
 
+
+   def findChar(self):
+
+       indexR = 0
+       indexC = 0
+       found = False
+       for r in self.mapTile:
+           indexC = 0
+           for c in r:
+               if c == "X":
+                   found = True
+                   break
+               indexC +=1
+           if found:
+               break
+           indexR +=1
+       pos = Position(indexR, indexC)
+       self.lastPos.addPosition(pos)
+
+
+
+  for line in maps_to_update:
+            line_to_display = ""
+            for elements in line:
+                maps_temps = open(str(cartes_temp) + "/" + maps + ".txt", "a")
+                line_to_display += elements
+            
+            maps_temps.write(line_to_display)
+            maps_temps.close()      
+            

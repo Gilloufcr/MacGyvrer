@@ -11,11 +11,13 @@ class Caracter():
         self.position_pipe = level_game.pipe
         self.position_needle = level_game.needle
         self.position_ether = level_game.ether
+        self.position_guardian = level_game.guardian
         self.level_game = level_game 
         self.new_positionmc = (-1, -1)
         self.list_objects = []
+        self.end = False
         #print(self.position_0)
-        #print(self.position_pipe)
+        print(self.position_pipe)
         #print(self.position_wall)
         
 
@@ -32,10 +34,16 @@ class Caracter():
                 print("Dans le Mur")
             if self.new_positionmc in self.position_pipe:
                 self.list_objects.append("Pipe")
+                print(self.list_objects)
             if self.new_positionmc in self.position_needle:
                 self.list_objects.append("Needle")
+                print(self.list_objects)
             if self.new_positionmc in self.position_ether:
                 self.list_objects.append("Ether")
+                print(self.list_objects)
+            if self.new_positionmc in self.position_guardian and (len(self.list_objects) == 3):
+                print("You Win!!")
+                self.end = True
             else:
                 print(self.new_positionmc)
         if key == keys.DOWN:
@@ -46,10 +54,16 @@ class Caracter():
                 print("Dans le Mur")
             if self.new_positionmc in self.position_pipe:
                 self.list_objects.append("Pipe")
+                print(self.list_objects)
             if self.new_positionmc in self.position_needle:
                 self.list_objects.append("Needle")
+                print(self.list_objects)
             if self.new_positionmc in self.position_ether:
                 self.list_objects.append("Ether")
+                print(self.list_objects)
+            if self.new_positionmc in self.position_guardian and (len(self.list_objects) == 3):
+                print("You Win!!")
+                self.end = True
             else:
                 print(self.position_0)
         if key == keys.RIGHT:
@@ -60,10 +74,16 @@ class Caracter():
                 print("Dans le Mur")
             if self.new_positionmc in self.position_pipe:
                 self.list_objects.append("Pipe")
+                print(self.list_objects)
             if self.new_positionmc in self.position_needle:
                 self.list_objects.append("Needle")
+                print(self.list_objects)
             if self.new_positionmc in self.position_ether:
                 self.list_objects.append("Ether")
+                print(self.list_objects)
+            if self.new_positionmc in self.position_guardian and (len(self.list_objects) == 3):
+                print("You Win!!")
+                self.end = True
             else:
                 print(self.position_0)
         if key == keys.LEFT:
@@ -74,12 +94,20 @@ class Caracter():
                 print("Dans le Mur")
             if self.new_positionmc in self.position_pipe:
                 self.list_objects.append("Pipe")
+                print(self.list_objects)
             if self.new_positionmc in self.position_needle:
                 self.list_objects.append("Needle")
+                print(self.list_objects)
             if self.new_positionmc in self.position_ether:
                 self.list_objects.append("Ether")
+                print(self.list_objects)
+            if self.new_positionmc in self.position_guardian and (len(self.list_objects) == 3):
+                print("You Win!!")
+                self.end = True
             else:
                 print(self.position_0)
+        
+        return self.end
 
         
 
