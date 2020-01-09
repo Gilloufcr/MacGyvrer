@@ -14,10 +14,10 @@ class Caracter():
         self.position_guardian = level_game.guardian
         self.level_game = level_game 
         self.new_positionmc = (-1, -1)
-        self.list_objects = []
+        self.objects = []
         self.end = False
-        #print(self.position_0)
-        print(self.position_pipe)
+        print("Position of Mac when Level Is Created", self.position_0)
+        #print(self.position_pipe)
         #print(self.position_wall)
         
 
@@ -25,7 +25,7 @@ class Caracter():
     def move(self, key):
         
         x,y = self.position_0
-        self.list_objects = []
+        objects = ""
         if key == keys.UP:
             self.position_0 = (x,y-1)
             self.new_positionmc = self.position_0
@@ -33,19 +33,19 @@ class Caracter():
                 self.new_positionmc = (x,y)
                 print("Dans le Mur")
             if self.new_positionmc in self.position_pipe:
-                self.list_objects.append("Pipe")
-                print(self.list_objects)
+                self.objects.append("Pipe")
+                print(objects)
             if self.new_positionmc in self.position_needle:
-                self.list_objects.append("Needle")
-                print(self.list_objects)
+                self.objects.append("Needle")
+                print(objects)
             if self.new_positionmc in self.position_ether:
-                self.list_objects.append("Ether")
-                print(self.list_objects)
-            if self.new_positionmc in self.position_guardian and (len(self.list_objects) == 3):
-                print("You Win!!")
+                self.objects.append("Ether")
+                print(objects)
+            if self.new_positionmc in self.position_guardian:
                 self.end = True
             else:
-                print(self.new_positionmc)
+                print("Position in move Key Selected", self.new_positionmc)
+        
         if key == keys.DOWN:
             self.position_0 = (x,y+1)
             self.new_positionmc = self.position_0
@@ -53,19 +53,19 @@ class Caracter():
                 self.new_positionmc = (x,y)
                 print("Dans le Mur")
             if self.new_positionmc in self.position_pipe:
-                self.list_objects.append("Pipe")
-                print(self.list_objects)
+                self.objects.append("Pipe")
+                print(objects)
             if self.new_positionmc in self.position_needle:
-                self.list_objects.append("Needle")
-                print(self.list_objects)
+                self.objects.append("Needle")
+                print(objects)
             if self.new_positionmc in self.position_ether:
-                self.list_objects.append("Ether")
-                print(self.list_objects)
-            if self.new_positionmc in self.position_guardian and (len(self.list_objects) == 3):
-                print("You Win!!")
+                self.objects.append("Ether")
+                print(objects)
+            if self.new_positionmc in self.position_guardian:
                 self.end = True
             else:
-                print(self.position_0)
+                print("Position in move Key Selected", self.new_positionmc)
+        
         if key == keys.RIGHT:
             self.position_0 = (x+1,y)
             self.new_positionmc = self.position_0
@@ -73,19 +73,19 @@ class Caracter():
                 self.new_positionmc = (x,y)
                 print("Dans le Mur")
             if self.new_positionmc in self.position_pipe:
-                self.list_objects.append("Pipe")
-                print(self.list_objects)
+                self.objects.append("Pipe")
+                print(objects)
             if self.new_positionmc in self.position_needle:
-                self.list_objects.append("Needle")
-                print(self.list_objects)
+                self.objects.append("Needle")
+                print(objects)
             if self.new_positionmc in self.position_ether:
-                self.list_objects.append("Ether")
-                print(self.list_objects)
-            if self.new_positionmc in self.position_guardian and (len(self.list_objects) == 3):
-                print("You Win!!")
+                self.objects.append("Ether")
+                print(objects)
+            if self.new_positionmc in self.position_guardian:
                 self.end = True
             else:
-                print(self.position_0)
+                print("Position in move Key Selected", self.new_positionmc)
+        
         if key == keys.LEFT:
             self.position_0 = (x-1,y)
             self.new_positionmc = self.position_0
@@ -93,21 +93,20 @@ class Caracter():
                 self.new_positionmc = (x,y)
                 print("Dans le Mur")
             if self.new_positionmc in self.position_pipe:
-                self.list_objects.append("Pipe")
-                print(self.list_objects)
+                self.objects.append("Pipe")
+                print(objects)
             if self.new_positionmc in self.position_needle:
-                self.list_objects.append("Needle")
-                print(self.list_objects)
+                self.objects.append("Needle")
+                print(objects)
             if self.new_positionmc in self.position_ether:
-                self.list_objects.append("Ether")
-                print(self.list_objects)
-            if self.new_positionmc in self.position_guardian and (len(self.list_objects) == 3):
-                print("You Win!!")
+                self.objects.append("Ether")
+                print(objects)
+            if self.new_positionmc in self.position_guardian:
                 self.end = True
             else:
-                print(self.position_0)
-        
+                print("Position in move Key Selected", self.new_positionmc)
         return self.end
+        
 
         
 

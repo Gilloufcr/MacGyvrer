@@ -28,12 +28,19 @@ while continuer_partie == True:
         play_level = Level(choix_carte)
         play_level.display_level()
         macgiver = Caracter(play_level)
-            
+
+        level_to_write = Write(choix_carte, play_level.positionmc, play_level)
+        list_of_objects = []
         while macgiver.end is not True:
+            #os.system('clear')
             macgiver.move(getkey())
-            position_of_mac = macgiver.new_positionmc
-            level_to_write = Write(choix_carte, position_of_mac, play_level)
-            level_to_write.write_level(choix_carte, position_of_mac)
+            #position_of_mac = macgiver.new_positionmc
+            #level_to_write = Write(choix_carte, position_of_mac, play_level)
+            #level_to_write.write_level(choix_carte, position_of_mac)
+            level_to_write.write_level(choix_carte, macgiver.new_positionmc)
+            
+            print(macgiver.objects)
+            
         
         continuer_partie = False
         

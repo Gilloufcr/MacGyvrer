@@ -110,3 +110,32 @@ def create_level(self, maps):
             maps_temps.write(line_to_display)
             maps_temps.close()      
             
+
+
+            while continuer_partie == True:
+   """Tant que la partie n'est pas fini, on a atteint la sortie U"""
+
+   """Menu"""
+   choix_menu = input("Merci de faire un choix : \n 1-)Selection du niveau, 1, 2, 3 \n 2-)Quitter \n\nVotre choix : ")
+
+   if choix_menu == '1':
+
+       choix_carte = input("Merci de Choisir une cartes parmis la liste suivante 1,2,3 : ")
+
+       """On copie le fichier de carte pour effectuer la partie"""
+
+       copy_maps = Copy(choix_carte)
+       copy_maps.copy_level(choix_carte)
+
+       play_level = Level(choix_carte)
+       play_level.display_level()
+       macgiver = Caracter(play_level)
+       level_to_write = Write(choix_carte, play_level.positionmac, play_level)
+       while macgiver.end is not True:
+           macgiver.move(key)
+           level_to_write.write_level(choix_carte, macgiver.new_positionmc)
+           macgiver.end = True
+       continuer_partie = False
+
+   if choix_menu == '2':
+       continuer_partie = False

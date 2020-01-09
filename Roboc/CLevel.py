@@ -70,27 +70,27 @@ class Write():
         self.maps = maps
         self.positionmac = positionmac
         self.level_positionmc = level_game.positionmc
-        
 
     def write_level(self, maps, positionmac):
         with open(str(cartes_temp) + "/" + maps + ".txt", 'r') as contenu:
             level = contenu.read()
-            p_old0 = self.level_positionmc[1]
-            p_old1 = self.level_positionmc[0]
-            print(p_old0)
-            print(p_old1)
+            p_old0 = self.level_positionmc[0]
+            p_old1 = self.level_positionmc[1]
+            print("Position (if) P_old0 at the begenin of function", p_old0)
+            print("Position (if) P_old1 at the begenin of function", p_old1)
             p_0 = positionmac[1]
             p_1 = positionmac[0]
             maps_to_update = [list(i) for i in level.splitlines()]
             maps_to_update[p_old0][p_old1] = " "
             maps_to_update[p_0][p_1] = "X"
-            #p_old0 = p_0
-            #p_old1 = p_1
-            print("new pos ",p_old0)
-            print("new pos ",p_old1)
-            self.level_positionmc = (p_0, p_1)
-            
-        print(maps_to_update)
+            p_old0 = p_0
+            p_old1 = p_1
+            print("new position of P_Old0 ",p_old0)
+            print("new position  of P_Old1 ",p_old1)
+            self.level_positionmc = (p_old0, p_old1)
+            print("Position Of Level_Positionmc, After Update",self.level_positionmc)
+        
+        #print(maps_to_update)
         maps_temps = open(str(cartes_temp) + "/" + maps + ".txt", "w")
         lines = ""
         for line in maps_to_update:
@@ -99,6 +99,6 @@ class Write():
                 line_to_display += elements
             lines += line_to_display
             lines += '\n'
-            print(lines)
+            print(line_to_display)
         maps_temps.write(lines)
         maps_temps.close()
