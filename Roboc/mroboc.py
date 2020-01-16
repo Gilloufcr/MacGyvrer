@@ -3,7 +3,7 @@
 
 import os
 from getkey import getkey, keys
-from clevel import Level, Copy, Write
+from clevel import Level
 from ccaracter import Caracter
 
 continuer_partie = True
@@ -22,22 +22,17 @@ while continuer_partie == True:
         
         """On copie le fichier de carte pour effectuer la partie"""
         
-        copy_maps = Copy(choix_carte)
-        copy_maps.copy_level(choix_carte)
-
+        
+        
         play_level = Level(choix_carte)
+        play_level.copy_level(choix_carte)
         play_level.display_level()
         macgiver = Caracter(play_level)
 
-        level_to_write = Write(choix_carte, play_level.positionmc, play_level)
         list_of_objects = []
         while macgiver.end is not True:
-            #os.system('clear')
             macgiver.move(getkey())
-            #position_of_mac = macgiver.new_positionmc
-            #level_to_write = Write(choix_carte, position_of_mac, play_level)
-            #level_to_write.write_level(choix_carte, position_of_mac)
-            level_to_write.write_level(choix_carte, macgiver.new_positionmc)
+            play_level.write_level(choix_carte, macgiver.position_0)
             
             print(macgiver.objects)
             

@@ -16,10 +16,12 @@ class Level():
         self.needle = []
         self.ether = []
         self.guardian = []
+        self.spaces = []
         self.list_level = self.create_level(maps)
+        self.level_positionmc = self.positionmc
        
     def create_level(self, maps):
-        with open(str(cartes_temp) + "/" + maps + ".txt", 'r') as contenu:
+        with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
             level = contenu.read()
             list_level = []
             for i, line in enumerate(level.splitlines()):
@@ -37,6 +39,8 @@ class Level():
                             self.ether.append((j,i))
                     if elements == "G":
                             self.guardian.append((j,i))
+                    if elements == " ":
+                            self.spaces.append((j,i))
                     list_line.append(elements)
 
                 list_level.append(list_line)
@@ -49,27 +53,13 @@ class Level():
             for elements in line:
                 line_to_display += elements
             print(line_to_display)
-                        
-        
-class Copy():
 
-    def __init__(self, maps):
-        self.maps = maps
-    
     def copy_level(self, maps):
         with open(str(mon_rep_cartes) + "/" + maps + ".txt", 'r') as contenu:
             write_maps = contenu.read()
             maps_temps = open(str(cartes_temp) + "/" + maps + ".txt", "w")
             maps_temps.write(write_maps)
             maps_temps.close()
-
-
-class Write():
-
-    def __init__(self, maps, positionmac, level_game):
-        self.maps = maps
-        self.positionmac = positionmac
-        self.level_positionmc = level_game.positionmc
 
     def write_level(self, maps, positionmac):
         with open(str(cartes_temp) + "/" + maps + ".txt", 'r') as contenu:
