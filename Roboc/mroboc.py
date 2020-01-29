@@ -6,39 +6,33 @@ from getkey import getkey, keys
 from clevel import Level
 from ccaracter import Caracter
 
-continuer_partie = True
-choix_menu = ""
+game_on = True
+menu_choice = ""
 
 
-while continuer_partie == True:
-    """Tant que la partie n'est pas fini, on a atteint la sortie U"""
+while game_on == True:
+    """Tant que la partie n'est pas fini, on a atteint la sortie G"""
     
     """Menu"""
-    choix_menu = input("Merci de faire un choix : \n 1-)Selection du niveau, 1, 2, 3 \n 2-)Quitter \n\nVotre choix : ")
+    menu_choice = input("Merci de faire un choix : \n 1-)Selection du niveau, 1, 2, 3 \n 2-)Quitter \n\nVotre choix : ")
         
-    if choix_menu == '1':
+    if menu_choice == '1':
     
-        choix_carte = input("Merci de Choisir une cartes parmis la liste suivante 1,2,3 : ")
-        
-        """On copie le fichier de carte pour effectuer la partie"""
-        
-        
-        
-        play_level = Level(choix_carte)
-        play_level.copy_level(choix_carte)
+        level_choice = input("Merci de Choisir une cartes parmis la liste suivante 1,2,3 : ")
+            
+        play_level = Level(level_choice)
         play_level.display_level()
         macgiver = Caracter(play_level)
 
         list_of_objects = []
         while macgiver.end is not True:
             macgiver.move(getkey())
-            print(macgiver.position_0)
             play_level.display_level(macgiver.position_0)
             
             print(macgiver.objects)
             
         
-        continuer_partie = False
+        game_on = False
         
-    if choix_menu == '2':
-        continuer_partie = False
+    if menu_choice == '2':
+        game_on = False
