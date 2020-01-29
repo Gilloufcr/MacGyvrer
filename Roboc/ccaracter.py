@@ -8,18 +8,13 @@ class Caracter():
 
         self.position_0 = level_game.positionmc
         self.position_wall = level_game.wall
-        self.position_pipe = level_game.pipe
-        self.position_needle = level_game.needle
-        self.position_ether = level_game.ether
         self.position_guardian = level_game.guardian
         self.position_spaces = level_game.spaces
-        self.level_game = level_game 
-        self.new_positionmc = ()
+        self.level_game = level_game
+        self.new_positionmc = (0, 0)
         self.objects = []
         self.end = False
         print("Position of Mac when Level Is Created", self.position_0)
-        #print(self.position_pipe)
-        #print(self.position_wall)
         
 
 
@@ -36,23 +31,11 @@ class Caracter():
             if self.new_positionmc in self.position_wall:
                 #self.new_positionmc = (x,y)
                 print("Dans le Mur")
-            if self.new_positionmc in self.position_pipe:
-                self.objects.append("Pipe")
-                self.position_pipe = (-15,-15)
+            if self.new_positionmc in self.level_game.dict_objects.keys():
+                self.objects.append(self.level_game.dict_objects[self.new_positionmc])
+                del self.level_game.dict_objects[self.new_positionmc]
+                self.position_spaces.append(self.new_positionmc)
                 self.position_0 = (x,y-1)
-                self.position_spaces.append(self.position_0)
-                print(objects)
-            if self.new_positionmc in self.position_needle:
-                self.objects.append("Needle")
-                self.position_needle = (-15,-15)
-                self.position_0 = (x,y-1)
-                self.position_spaces.append(self.position_0)
-                print(objects)
-            if self.new_positionmc in self.position_ether:
-                self.objects.append("Ether")
-                self.position_ether = (-15,-15)
-                self.position_0 = (x,y-1)
-                self.position_spaces.append(self.position_0)
                 print(objects)
             if self.new_positionmc in self.position_guardian:
                 self.position_0 = (x,y-1)
@@ -69,23 +52,11 @@ class Caracter():
             if self.new_positionmc in self.position_wall:
                 #self.new_positionmc = (x,y)
                 print("Dans le Mur")
-            if self.new_positionmc in self.position_pipe:
-                self.objects.append("Pipe")
-                self.position_pipe = (-15,-15)
+            if self.new_positionmc in self.level_game.dict_objects.keys():
+                self.objects.append(self.level_game.dict_objects[self.new_positionmc])
+                del self.level_game.dict_objects[self.new_positionmc]
+                self.position_spaces.append(self.new_positionmc)
                 self.position_0 = (x,y+1)
-                self.position_spaces.append(self.position_0)
-                print(objects)
-            if self.new_positionmc in self.position_needle:
-                self.objects.append("Needle")
-                self.position_needle = (-15,-15)
-                self.position_0 = (x,y+1)
-                self.position_spaces.append(self.position_0)
-                print(objects)
-            if self.new_positionmc in self.position_ether:
-                self.objects.append("Ether")
-                self.position_ether = (-15,-15)
-                self.position_0 = (x,y+1)
-                self.position_spaces.append(self.position_0)
                 print(objects)
             if self.new_positionmc in self.position_guardian:
                 self.position_0 = (x,y+1)
@@ -102,25 +73,13 @@ class Caracter():
             if self.new_positionmc in self.position_wall:
                 #self.new_positionmc = (x,y)
                 print("Dans le Mur")
-            if self.new_positionmc in self.position_pipe:
-                self.objects.append("Pipe")
-                self.position_pipe = (-15,-15)
+            if self.new_positionmc in self.level_game.dict_objects.keys():
+                self.objects.append(self.level_game.dict_objects[self.new_positionmc])
+                del self.level_game.dict_objects[self.new_positionmc]
+                self.position_spaces.append(self.new_positionmc)
                 self.position_0 = (x+1,y)
-                self.position_spaces.append(self.position_0)
                 print(objects)
-            if self.new_positionmc in self.position_needle:
-                self.objects.append("Needle")
-                self.position_needle = (-15,-15)
-                self.position_0 = (x+1,y)
-                self.position_spaces.append(self.position_0)
-                print(objects)
-            if self.new_positionmc in self.position_ether:
-                self.objects.append("Ether")
-                self.position_ether = (-15,-15)
-                self.position_0 = (x+1,y)
-                self.position_spaces.append(self.position_0)
-                print(objects)
-            if (self.new_positionmc in self.position_guardian and len(self.objects) == 3):
+            if self.new_positionmc in self.position_guardian:
                 self.position_0 = (x+1,y)
                 self.end = True
             else:
@@ -135,23 +94,11 @@ class Caracter():
             if self.new_positionmc in self.position_wall:
                 #self.new_positionmc = (x,y)
                 print("Dans le Mur")
-            if self.new_positionmc in self.position_pipe:
-                self.objects.append("Pipe")
-                self.position_pipe = (-15,-15)
+            if self.new_positionmc in self.level_game.dict_objects.keys():
+                self.objects.append(self.level_game.dict_objects[self.new_positionmc])
+                del self.level_game.dict_objects[self.new_positionmc]
+                self.position_spaces.append(self.new_positionmc)
                 self.position_0 = (x-1,y)
-                self.position_spaces.append(self.position_0)
-                print(objects)
-            if self.new_positionmc in self.position_needle:
-                self.objects.append("Needle")
-                self.position_needle = (-15,-15)
-                self.position_0 = (x-1,y)
-                self.position_spaces.append(self.position_0)
-                print(objects)
-            if self.new_positionmc in self.position_ether:
-                self.objects.append("Ether")
-                self.position_ether = (-15,-15)
-                self.position_0 = (x-1,y)
-                self.position_spaces.append(self.position_0)
                 print(objects)
             if self.new_positionmc in self.position_guardian:
                 self.position_0 = (x-1,y)

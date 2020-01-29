@@ -32,7 +32,8 @@ while continuer_partie == True:
         list_of_objects = []
         while macgiver.end is not True:
             macgiver.move(getkey())
-            play_level.write_level(choix_carte, macgiver.position_0)
+            print(macgiver.position_0)
+            play_level.display_level(macgiver.position_0)
             
             print(macgiver.objects)
             

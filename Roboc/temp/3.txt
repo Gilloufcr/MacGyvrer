@@ -3,9 +3,9 @@ O        O
 O        O
 O        O
 O        O
-O        X
+O        G
 O        O
 O        O
-O        O
+O   X    O
 O        O
 OOOOOOOOOO 
