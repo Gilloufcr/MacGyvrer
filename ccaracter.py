@@ -21,7 +21,7 @@ class Caracter():
     def move(self, key):
         
         x,y = self.position_0
-        objects = ""
+        objects = ""        
         if key == keys.UP:
             print("Position in UP time", self.position_0)
             self.new_positionmc = (x,y-1)
@@ -34,11 +34,7 @@ class Caracter():
                 self.position_spaces.append(self.new_positionmc)
                 self.position_0 = (x,y-1)
                 print(objects)
-            if self.new_positionmc in self.position_guardian and len(self.objects) == 3:
-                self.end = True
-                print("Vous avez Gagné!")
             
-        
         if key == keys.DOWN:
             print("Position in DOWN time", self.position_0)
             self.new_positionmc = (x,y+1)
@@ -51,10 +47,7 @@ class Caracter():
                 self.position_spaces.append(self.new_positionmc)
                 self.position_0 = (x,y+1)
                 print(objects)
-            if self.new_positionmc in self.position_guardian and len(self.objects) == 3:
-                self.end = True
-                print("Vous avez Gagné!")
-            
+ 
         if key == keys.RIGHT:
             print("Position in RIGHT time", self.position_0)
             self.new_positionmc = (x+1,y)
@@ -67,10 +60,7 @@ class Caracter():
                 self.position_spaces.append(self.new_positionmc)
                 self.position_0 = (x+1,y)
                 print(objects)
-            if self.new_positionmc in self.position_guardian and len(self.objects) == 3:
-                self.end = True
-                print("Vous avez Gagné!")
-           
+
         if key == keys.LEFT:
             print("Position in LEFT time", self.position_0)
             self.new_positionmc = (x-1,y)
@@ -83,9 +73,16 @@ class Caracter():
                 self.position_spaces.append(self.new_positionmc)
                 self.position_0 = (x-1,y)
                 print(objects)
-            if self.new_positionmc in self.position_guardian and len(self.objects) == 3:
+            
+
+        if self.new_positionmc in self.position_guardian:
+            if len(self.objects) == 3:
                 self.end = True
                 print("Vous avez Gagné!")
-            
+            else:
+                self.end = True
+                print("Vous avez perdu!!")
+
+
         return self.end
         

@@ -3,6 +3,7 @@
 from pathlib import Path
 from ccaracter import Caracter
 import random
+import os
 
 mon_rep_cartes = Path(__file__).parent / "cartes"
 cartes_temp = Path(__file__).parent / "temp"
@@ -56,10 +57,10 @@ class Level():
         return self.list_level        
     
     def display_level(self, positionmac=()):
+        clear = lambda: os.system('clear')
+        clear()
         if positionmac != ():
             self.list_level[self.positionmc[1]][self.positionmc[0]] = " "
-            #print("position mc", self.positionmc)
-            #print("position mac", positionmac)
             self.list_level[positionmac[1]][positionmac[0]] = "X"
             self.positionmc = positionmac
 
